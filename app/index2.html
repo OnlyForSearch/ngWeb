@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="InvoiceCtrl">
+    <b>Invoice(发票):</b>
+    <br />
+    <br />
+    <table>
+
+        <tr>
+            <td>Quantity(数量)</td>
+            <td>Cost(价格)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="integer" ng-model="qyt" min="0" required /></td>
+            <td>
+                <input type="number" ng-model="cost"  required/>
+            </td>
+        </tr>
+    </table>
+    <hr />
+        <b>Total:{{qyt*cost|currency}}</b>
+</div>
+
+<span draggable>Drag ME</span>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="scripts/controllers/scripts.js"></script>
+
+
+</body>
+</html>
