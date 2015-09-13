@@ -19943,7 +19943,7 @@ function nullFormRenameControl(control, name) {
 
 /**
  * @ngdoc type
- * @name form.FormController
+ * @name form.Controller
  *
  * @property {boolean} $pristine True if user has not interacted with the form yet.
  * @property {boolean} $dirty True if user has already interacted with the form.
@@ -20005,7 +20005,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$rollbackViewValue
+   * @name form.Controller#$rollbackViewValue
    *
    * @description
    * Rollback all form controls pending updates to the `$modelValue`.
@@ -20022,7 +20022,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$commitViewValue
+   * @name form.Controller#$commitViewValue
    *
    * @description
    * Commit all form controls pending updates to the `$modelValue`.
@@ -20039,7 +20039,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$addControl
+   * @name form.Controller#$addControl
    *
    * @description
    * Register a control with the form.
@@ -20070,7 +20070,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$removeControl
+   * @name form.Controller#$removeControl
    *
    * @description
    * Deregister a control from the form.
@@ -20097,7 +20097,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$setValidity
+   * @name form.Controller#$setValidity
    *
    * @description
    * Sets the validity of a form control.
@@ -20134,7 +20134,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$setDirty
+   * @name form.Controller#$setDirty
    *
    * @description
    * Sets the form to a dirty state.
@@ -20152,7 +20152,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$setPristine
+   * @name form.Controller#$setPristine
    *
    * @description
    * Sets the form to its pristine state.
@@ -20176,7 +20176,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$setUntouched
+   * @name form.Controller#$setUntouched
    *
    * @description
    * Sets the form to its untouched state.
@@ -20195,7 +20195,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
 
   /**
    * @ngdoc method
-   * @name form.FormController#$setSubmitted
+   * @name form.Controller#$setSubmitted
    *
    * @description
    * Sets the form to its submitted state.
@@ -20233,7 +20233,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
  *
  * @description
  * Directive that instantiates
- * {@link form.FormController FormController}.
+ * {@link form.Controller FormController}.
  *
  * If the `name` attribute is specified, the form controller is published onto the current scope under
  * this name.

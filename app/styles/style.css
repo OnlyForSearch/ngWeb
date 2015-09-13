@@ -1,0 +1,14 @@
+/*为了能美化表单和表单元素，ngModel指令会自动为元素添加以下css类：
+
+ng-valid
+ng-invalid
+ng-pristine
+ng-dirty
+*/
+.css-form input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}

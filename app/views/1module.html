@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="xmpl">
+<head lang="en">
+
+    <meta charset="UTF-8">
+    <style>
+        .doc-example-live .ng-scope {
+            border: 1px dashed red;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div >
+{{'World'|greet}}
+
+</div>
+<div ng-controller="XmplController">
+    {{greeting}}!
+</div>
+<hr />
+<h2>作用域</h2>
+<div ng-controller="MyController">
+
+        Your name: <input type="text" ng-model="username" />
+    <button  ng-click="sayHello()">greet</button>
+    {{greetings}}
+</div>
+<hr style="border: 1px deepskyblue dashed" />
+<h2>作用域层级</h2>
+<div ng-controller="EmployeeController">
+        Manager:{{employee.name}}[{{department}}]<br />
+        Report:
+    <ul>
+        <li ng-repeat="report in employee.reports">
+            {{employee.name}} [ {{department}} ]
+        </li>
+    </ul>
+    <hr />
+    greeting{{greeting}}
+</div>
+<hr style="border: 1px deepskyblue dashed" />
+<h2>作用域事件的传递:作用域中的事件传递是和DOM事件传递类似的。事件可以广播给子作用域或者传递给父作用域。</h2>
+
+<div ng-controller="EventController">
+    Root scope <tt>MyEvent</tt> count: {{count}}
+    <ul>
+        <li ng-repeat="i in [1]" ng-controller="EventController">
+            <button ng-click="$emit('MyEvent')">$emit('MyEvent')</button>
+            <button ng-click="$broadcast('MyEvent')">广播:$broadcast('MyEvent')</button>
+            <br>
+            Middle scope <tt>MyEvent</tt> count: {{count}}
+            <ul>
+                <li ng-repeat="item in [1, 2]" ng-controller="EventController">
+                    Leaf scope <tt>MyEvent</tt> count: {{count}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../scripts/controllers/module.js"></script>
+<script>
+  /*  var app = angular.module('myApp', []);
+    app.filter('greet', function () {
+        return function (name) {
+            return 'Hello ' + name + '!';
+        }
+    });*/
+</script>
+
+</body>
+</html>
