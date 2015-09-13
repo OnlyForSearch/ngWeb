@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>控制器之间的元素继承 </h2>
+<div ng-controller="MainCtrl">
+<p>    timeOfDay:{{timeOfDay}}    name{{name}}</p>
+    <div ng-controller="ChildCtrl">
+<p>    timeOfDay:{{timeOfDay}}    name{{name}}</p>
+
+        <p ng-controller="BabyCtrl">timeOfDay:{{timeOfDay}} name{{name}}</p>
+    </div>
+</div>
+
+
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../scripts/controllers/controllers.js"></script>
+</body>
+</html>
