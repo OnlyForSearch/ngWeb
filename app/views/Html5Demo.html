@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html >
+<head lang="en" >
+    <meta charset="UTF-8" >
+    <title ></title >
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js" ></script >
+    <![endif]-->
+
+    <style >
+
+        #div2 { width: 350px; height: 70px; padding: 10px; border: 1px solid #aaaaaa; }
+
+        #divDrag2, #divDrag3 {
+            width: 100px;
+            height: 35px;
+            float: left;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #78FA89;
+        }
+    </style >
+
+</head >
+<body >
+<div class="div1" >
+
+    <div class="canvas" >
+        <h2 >Canvas画布</h2 >
+        <canvas id="myCanvas" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+        <script >
+            //首先，找到 <canvas> 元素:
+            var canvas = document.getElementById('myCanvas');
+            //然后，创建 context 对象：对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
+            var context = canvas.getContext("2d");
+            //        两行代码绘制一个红色的矩形
+            //置fillStyle属性可以是CSS颜色，渐变，或图案。fillStyle 默认设置是#000000（黑色）。
+            context.fillStyle = "#def";
+            //在画布上绘制 150x75 的矩形，从左上角开始 (0,0)。
+            context.fillRect(0, 0, 150, 75);
+            //-------------------------------------------
+        </script >
+    </div >
+    <div class="canvas" >
+        <h2 >Canvas - 路径</h2 >
+        <canvas id="myCanvas2" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+            //绘制线条我们必须使用到 "ink" 的方法，就像stroke().
+            var myCanvas2 = document.getElementById('myCanvas2');
+            var context2 = myCanvas2.getContext("2d");
+            context2.moveTo(0, 0);
+            context2.lineTo(200, 100);
+            //定义开始坐标(0,0), 和结束坐标 (200,100). 然后使用 stroke() 方法来绘制线条:
+            context2.stroke();
+        </script >
+
+    </div >
+
+    <div class="canvas" >
+        <h2 >Canvas - 画圆</h2 >
+        <canvas id="myCanvas3" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+            //绘制线条我们必须使用到 "ink" 的方法，就像stroke().
+            var myCanvas3 = document.getElementById('myCanvas3');
+            var context3 = myCanvas3.getContext("2d");
+            context3.beginPath();
+            context3.arc(95, 50, 40, 0, 2 * Math.PI);
+            context3.stroke();
+
+        </script >
+
+    </div >
+
+
+    <div class="canvas" >
+        <h2 >Canvas - 文本</h2 >
+        <canvas id="myCanvas4" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+            //绘制线条我们必须使用到 "ink" 的方法，就像stroke().
+            var myCanvas4 = document.getElementById('myCanvas4');
+            var context4 = myCanvas4.getContext("2d");
+            //        font - 定义字体
+            context4.font = "34px Arial";
+            //fillText(text,x,y) - 在 canvas 上绘制实心的文本
+            context4.fillText("Hello World!", 20, 50);
+            context4.stroke();
+
+        </script >
+
+    </div >
+    <div class="canvas" >
+        <h2 >Canvas - 文本2</h2 >
+        <canvas id="myCanvas5" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+            //绘制线条我们必须使用到 "ink" 的方法，就像stroke().
+            var myCanvas5 = document.getElementById('myCanvas5');
+            var context5 = myCanvas5.getContext("2d");
+            context5.font = "30px Arial";
+            //        strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+            context5.strokeText("Hello World", 10, 50);
+
+        </script >
+
+    </div >
+    <div class="canvas" >
+        <h2 >Canvas - 渐变1:创建一个线性渐变。使用渐变填充矩形:</h2 >
+        <canvas id="myCanvas6" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+            //绘制线条我们必须使用到 "ink" 的方法，就像stroke().
+            var myCanvas6 = document.getElementById('myCanvas6');
+            var context6 = myCanvas6.getContext("2d");
+            //createLinearGradient(x,y,x1,y1) - 创建线条渐变
+            var canvasGradient = context6.createLinearGradient(0, 0, 200, 0);
+            //当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+            //addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+            canvasGradient.addColorStop(0, "red");
+            canvasGradient.addColorStop(1, "blue");
+
+            //使用渐变，设置fillStyle或strokeStyle的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+            context6.fillStyle = canvasGradient;
+            context6.fillRect(0, 0, 200, 100);
+        </script >
+
+
+    </div >
+    <div class="canvas" >
+        <h2 >Canvas - 渐变2:创建一个径向/圆渐变。使用渐变填充矩形：</h2 >
+        <canvas id="myCanvas7" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+            //绘制线条我们必须使用到 "ink" 的方法，就像stroke().
+            var myCanvas7 = document.getElementById('myCanvas7');
+            var context7 = myCanvas7.getContext("2d");
+            //        createRadialGradient(x, y, r, x1, y1, r1) - 创建一个径向 / 圆渐变
+            var canvasGradient = context7.createRadialGradient(75, 50, 5, 90, 60, 100);
+            //当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+            //addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+            canvasGradient.addColorStop(0, "red");
+            canvasGradient.addColorStop(1, "blue");
+
+            //使用渐变，设置fillStyle或strokeStyle的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+            context7.fillStyle = canvasGradient;
+            context7.fillRect(0, 0, 200, 100);
+        </script >
+
+    </div >
+
+    <div class="canvas" >
+        <h2 >Canvas - 图像</h2 >
+        <img src="0.jpg" width="293" height="220" id="blue1" />
+        <canvas id="myCanvas8" width="200" height="100" style="border: 1px solid steelblue" >
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas >
+
+        <script >
+
+            var myCanvas8 = document.getElementById('myCanvas8');
+            var context8 = myCanvas8.getContext("2d");
+            var img = document.getElementById("blue1");
+            context8.drawImage(img, 10, 20);
+
+        </script >
+
+    </div >
+
+</div >
+</body >
+
+<br />
+<hr />
+<div >
+
+    <div >
+        <h1>拖放1</h1>
+        <p >拖动 W3CSchool.cc 图片到矩形框中:</p >
+        <!--3:ondragover 事件规定在何处放置被拖动的数据。
+        默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。-->
+        <!--当放置被拖数据时，会发生 drop 事件,，ondrop 属性调用了一个函数，drop(event)：-->
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" ></div >
+        <br >
+        <!--1:首先，为了使元素可拖动，把 draggable 属性设置为 true ：-->
+        <!--ondragstart 属性调用了一个函数，drag(event)，它规定了被拖动的数据。-->
+        <img id="drag1" src="logo.png" draggable="true" ondragstart="drag(event)" width="336" height="69" >
+
+        <script >
+            function allowDrop(ev) {
+//            通过调用 ondragover 事件的 event.preventDefault() 方法：来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+                ev.preventDefault();
+            }
+
+            function drag(ev) {
+                //2:dataTransfer.setData() 方法设置被拖数据的数据类型和值：数据类型是 "Text"，值是可拖动元素的 id ("drag1")。
+                ev.dataTransfer.setData("Text", ev.target.id);
+            }
+
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("Text");
+                //被拖元素追加到放置元素（目标元素）中
+                ev.target.appendChild(document.getElementById(data));
+            }
+        </script >
+    </div >
+    <div >
+
+        <h2 >拖放2:来回拖放</h2 >
+        <div id="divDrag2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="logo.png" draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31" >
+        </div>
+        <div id="divDrag3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <script  >
+
+
+        </script >
+
+    </div >
+    <hr />
+    <div>
+        <h1>Video</h1>
+        <div>
+            <video width="320" height="240" controls >
+                <source src="movie.mp4" type="video/mp4" >
+                <source src="movie.ogg" type="video/ogg" >
+                您的浏览器不支持 HTML5 video 标签。
+            </video >
+        </div>
+    </div>
+    <hr />
+    <div>
+        <h1></h1>
+        <div></div>
+    </div>
+
+
+</div >
+
+</html >
